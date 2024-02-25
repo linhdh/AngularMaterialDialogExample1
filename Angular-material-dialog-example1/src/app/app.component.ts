@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button'
 import { CommonModule } from '@angular/common';
+import { MyDialog1Component } from './my-dialog1/my-dialog1.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,14 @@ export class AppComponent {
     const myTempDialog = this.dialog.open(this.dialogRef, { data: this.myFooList });
     myTempDialog.afterClosed().subscribe((res) => {
 
+      // Data back from dialog
+      console.log({ res });
+    });
+  }
+
+  openCompDialog1() {
+    const myCompDialog = this.dialog.open(MyDialog1Component, { data: this.myFooList });
+    myCompDialog.afterClosed().subscribe((res) => {
       // Data back from dialog
       console.log({ res });
     });

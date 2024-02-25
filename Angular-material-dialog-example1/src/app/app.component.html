@@ -1,9 +1,14 @@
 <button mat-button (click)="openTempDialog()">Open Temp Modal</button>
+<button mat-button (click)="openCompDialog1()">Open Comp Modal</button>
 
 <ng-template #dialogRef let-mydata>
-  <h5>Hi I am Template Dialog following Foo list:</h5>
-  <ul *ngIf="mydata">
-    <li *ngFor="let item of mydata">{{item}}</li>
-  </ul>
-  <button mat-button mat-dialog-close="I am from dialog land...">Close</button>
+  <h5 mat-dialog-title>Hi I am Template Dialog following Foo list:</h5>
+  <mat-dialog-content>
+    <ul *ngIf="mydata">
+      <li *ngFor="let item of mydata">{{item}}</li>
+    </ul>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close="I am from dialog land...">Close</button>
+  </mat-dialog-actions>
 </ng-template>

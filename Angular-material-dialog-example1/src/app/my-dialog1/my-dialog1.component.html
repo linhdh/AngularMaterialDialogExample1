@@ -1,0 +1,16 @@
+<!--
+<h5>Hi I am Component Dialog following Foo list:</h5>
+<ul *ngIf="mydata">
+  <li *ngFor="let item of mydata">{{item}}</li>
+</ul>
+<button mat-button (click)="closeDialog()">Close</button>
+-->
+<h5 mat-dialog-title>Hi I am Template Dialog following Foo list:</h5>
+<mat-dialog-content>
+    <ul *ngIf="mydata">
+      <li *ngFor="let item of mydata">{{item}}</li>
+    </ul>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close="I am from dialog land...">Close</button>
+</mat-dialog-actions>
